@@ -9,9 +9,11 @@ const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
+fs.writeFileSync(outputPath, ?????)
 // const Employee = require("./lib/Employee");
 
 const employees = []
+
 
 function teamCreater() {
 
@@ -35,8 +37,12 @@ function teamCreater() {
             case "Engineer": addEngineer();
                 break;
 
-            case "intern": addIntern();
+            case "Intern": addIntern();
+                break;
+
+            case "done": render(employees);
                 break
+
         }
     })
 }
@@ -122,10 +128,48 @@ function addEngineer() {
         })
 }
 
+function addIntern() {
+    inquirer.prompt([
+        {
+            type: "input",
+            message: "What is your name?",
+            name: "name"
+        },
 
+        {
+            type: "input",
+            message: "What is your ID?",
+            name: "id"
+        },
 
+        {
+            type: "input",
+            message: "What is your email?",
+            name: "email"
+        },
 
-module.exports = employees
+        {
+            type: "input",
+            message: "What is your school?",
+            name: "school"
+        }
+    ])
+
+        .then(newEmployee => {
+            let newIntern = new Intern(
+                newEmployee.name,
+                newEmployee.id,
+                newEmployee.email,
+                newEmployee.school
+            )
+
+            employees.push(newIntern)
+
+            teamCreater();
+        })
+}
+
+teamCreater();
 
 
 
