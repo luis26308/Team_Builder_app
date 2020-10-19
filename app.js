@@ -9,8 +9,126 @@ const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
+// const Employee = require("./lib/Employee");
 
-render()
+const employees = []
+
+function teamCreater() {
+
+    inquirer.prompt([
+        {
+            type: "list",
+            message: "What position is the employee?",
+            name: "position",
+            choices: [
+                "Manager",
+                "Engineer",
+                "Intern",
+                "Done"
+            ]
+        }
+    ]).then(newEmployee => {
+        switch (newEmployee.position) {
+            case "Manager": addManager();
+                break;
+
+            case "Engineer": addEngineer();
+                break;
+
+            case "intern": addIntern();
+                break
+        }
+    })
+}
+function addManager() {
+    inquirer.prompt([
+        {
+            type: "input",
+            message: "What is your name?",
+            name: "name"
+        },
+
+        {
+            type: "input",
+            message: "What is your ID?",
+            name: "id"
+        },
+
+        {
+            type: "input",
+            message: "What is your email?",
+            name: "email"
+        },
+
+        {
+            type: "input",
+            message: "What is your office number?",
+            name: "officeNumber"
+        }
+    ])
+
+        .then(newEmployee => {
+            let newManager = new Manager(
+                newEmployee.name,
+                newEmployee.id,
+                newEmployee.email,
+                newEmployee.officeNumber
+            )
+
+            employees.push(newManager)
+
+            teamCreater();
+        })
+}
+
+function addEngineer() {
+    inquirer.prompt([
+        {
+            type: "input",
+            message: "What is your name?",
+            name: "name"
+        },
+
+        {
+            type: "input",
+            message: "What is your ID?",
+            name: "id"
+        },
+
+        {
+            type: "input",
+            message: "What is your email?",
+            name: "email"
+        },
+
+        {
+            type: "input",
+            message: "What is your github username?",
+            name: "username"
+        }
+    ])
+
+        .then(newEmployee => {
+            let newEngineer = new Engineer(
+                newEmployee.name,
+                newEmployee.id,
+                newEmployee.email,
+                newEmployee.username
+            )
+
+            employees.push(newEngineer)
+
+            teamCreater();
+        })
+}
+
+
+
+
+module.exports = employees
+
+
+
 
 
 // Write code to use inquirer to gather information about the development team members,
