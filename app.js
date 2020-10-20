@@ -5,15 +5,13 @@ const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
 
+
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
-fs.writeFileSync(outputPath, ?????)
-// const Employee = require("./lib/Employee");
 
 const employees = []
-
 
 function teamCreater() {
 
@@ -40,7 +38,7 @@ function teamCreater() {
             case "Intern": addIntern();
                 break;
 
-            case "done": render(employees);
+            case "Done": fs.writeFileSync(outputPath, render(employees));
                 break
 
         }
