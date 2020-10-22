@@ -15,6 +15,7 @@
 
   ## Usage
   Inizialize app by running 'node app.js' in the command line followed by just answering the prompted questions. Once no more team members need to be added enter 'Done' in the position select question.
+  
   ![Demo gif](./Assets/app-demo.gif)  
 
   ## License
