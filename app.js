@@ -64,6 +64,8 @@ function addManager() {
             type: "input",
             message: "What is your email?",
             name: "email",
+
+            // ------validation to be added ------ //
             // validate: function(answer) {
             //     if (answer.match(/\S+@\.\S+/)) {
             //         return true;

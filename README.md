@@ -1,4 +1,4 @@
-  # Template_Engine
+  # Team Builder
 
   ## Table Of Contents
   - [Description](#Description)  
@@ -14,7 +14,7 @@
   There is a package.json, so make sure to npm install. The dependencies are, jest for running the provided tests, and inquirer for collecting input from the user.
 
   ## Usage
-  ![Demo gif](demo.gif)  
+  ![Demo gif](./assets/app-demo.gif)  
 
   ## License
   MIT License
