@@ -14,7 +14,7 @@
   There is a package.json, so make sure to npm install. The dependencies are, jest for running the provided tests, and inquirer for collecting input from the user.
 
   ## Usage
-  Inizialize app by running 'node app.js' in the command line followed by just answering the prompted questions. Once no more team members need to be added enter 'Done' in the position select question.
+  Inizialize app by running 'node app.js' in the command line followed by just answering the prompted questions. Once no more team members need to be added enter 'Done' in the position select question. The app will then render an HTML file in the output folder with all the input data submitted in the prompted questions.
   
   ![Demo gif](./Assets/app-demo.gif)  
 
