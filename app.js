@@ -57,13 +57,20 @@ function addManager() {
         {
             type: "input",
             message: "What is your ID?",
-            name: "id"
+            name: "id"         
         },
 
         {
             type: "input",
             message: "What is your email?",
-            name: "email"
+            name: "email",
+            // validate: function(answer) {
+            //     if (answer.match(/\S+@\.\S+/)) {
+            //         return true;
+            //     } else {
+            //         throw err("Need valid email syntax")
+            //     }
+            // }
         },
 
         {
@@ -104,7 +111,7 @@ function addEngineer() {
         {
             type: "input",
             message: "What is your email?",
-            name: "email"
+            name: "email",
         },
 
         {
@@ -145,7 +152,7 @@ function addIntern() {
         {
             type: "input",
             message: "What is your email?",
-            name: "email"
+            name: "email",
         },
 
         {
